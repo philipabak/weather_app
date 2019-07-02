@@ -1,0 +1,34 @@
+<div class="site-content">
+  <div class="forecast-table">
+    <div class="container">
+      <div class="forecast-container">
+        <div class="today forecast">
+          <div class="forecast-content">
+            <div class="location"><%= @weather[:current][:summary] %></div>
+            <div class="degree">
+              <div class="num"><%= @weather[:current][:temperature] %><sup>o</sup>C</div>
+              <div class="forecast-icon">
+                <%= image_tag(@weather[:current][:icon], width: '90') %>
+              </div>
+            </div>
+            <div class="location"><%= @city %>, <%= @country %></div>
+          </div>
+        </div>
+
+        <% @weather[:hours].each do |obj| %>
+          <div class="forecast">
+            <div class="forecast-header">
+              <div class="day"><%= get_time_from_timestamp(obj[:time]) %></div>
+            </div> <!-- .forecast-header -->
+            <div class="forecast-content">
+              <div class="forecast-icon">
+                <%= image_tag(obj[:icon], width: '48') %>
+              </div>
+              <div class="degree"><%= obj[:temperature] %><sup>o</sup>C</div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
