@@ -1,16 +1,22 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
+  host: localhost
+  username: postgres
+  password: postgres
+
+production:
+  <<: *default
+  host: ec2-174-129-227-146.compute-1.amazonaws.com
+  database: d90he2an0b4uac
+  username: flhrrvnpdrpouh
+  password: f840afd8d6fbefe6fbb198836255900b3855f03c71f8b2f25f99a63de1082be5
 
 development:
   <<: *default
   database: weather_app_development
-  username:
-  password:
 
-production:
+test:
   <<: *default
-  database: d8m8m0mro6098q
-  username: votdbtwccrcjwn
-  password: e4fc763f8e34da0edff1b42792a2c7a88de1061609ea7ada9c42ce50bf38af02
+  database: weather_app_test
