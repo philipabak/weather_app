@@ -2,9 +2,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: localhost
-  username: postgres
-  password: postgres
 
 production:
   <<: *default
@@ -15,8 +12,7 @@ production:
 
 development:
   <<: *default
+  host: localhost
   database: weather_app_development
-
-test:
-  <<: *default
-  database: weather_app_test
+  username: postgres
+  password: postgres
