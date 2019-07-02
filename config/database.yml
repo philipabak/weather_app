@@ -11,6 +11,6 @@ development:
 
 production:
   <<: *default
-  database: weather_app_production
-  username: 
-  password:
+  database: d8m8m0mro6098q
+  username: votdbtwccrcjwn
+  password: e4fc763f8e34da0edff1b42792a2c7a88de1061609ea7ada9c42ce50bf38af02
